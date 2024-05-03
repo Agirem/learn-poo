@@ -1,10 +1,29 @@
 <?php
 class Calculatrice{
-    public $marque;
-    public $type;
-    public $niveau_scolaire;
+    private $marque;
+    private $type;
+    private $niveau_scolaire;
 
+// Getters et setters
+public function getMarque(){
+   return $this-> marque;
+}
+public function getType(){
+   return $this->type;
+}
+public function getNiveauScolaire(){
+   return $this->niveau_scolaire;
+}
 
+public function setMarque($marque){
+$this->marque = $marque;
+}
+public function setType($type){
+    $this->type = $type;
+}
+public function setNiveauScolaire($niveau_scolaire){
+    $this->niveau_scolaire = $niveau_scolaire;
+}
     public function Additionner($a, $b){
         return $a + $b;
     }
@@ -20,17 +39,12 @@ class Calculatrice{
     }
 }
 
-$a = 2;
-$b = 2;
 
 $calculatrice = new Calculatrice();
-$calculatrice->marque = 'Casio';
-$calculatrice->type = 'Scientifique';
-$calculatrice->niveau_scolaire = 'Lycée';
+$calculatrice->setMarque('Casio');
+$calculatrice->setType('Scientifique');
+$calculatrice->setNiveauScolaire('Lycee');
 
-var_dump($calculatrice);
-
-echo $calculatrice->Additionner($a, $b);
-echo $calculatrice->Soustraire($a, $b);
-echo $calculatrice->Multiplier($a, $b);
-echo $calculatrice->Diviser($a, $b);
+echo $calculatrice->getMarque();
+echo $calculatrice->getType();
+echo $calculatrice->getNiveauScolaire();
